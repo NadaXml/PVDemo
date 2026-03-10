@@ -1,0 +1,190 @@
+{
+  "nodes": {
+    "start": {
+      "id": "start",
+      "name": "序章：醒来",
+      "video": "./videos/scene1.mp4",
+      "duration": 10,
+      "question": "你发现自己在一个陌生的房间，你会：",
+      "choices": [
+        { "text": "检查口袋里的物品", "next": "check_pocket", "key": "A" },
+        { "text": "打开房门出去", "next": "open_door", "key": "B" },
+        { "text": "大声呼救", "next": "call_help", "key": "C" }
+      ],
+      "timeout": 10,
+      "timeoutChoice": "check_pocket"
+    },
+    "check_pocket": {
+      "id": "check_pocket",
+      "name": "口袋的秘密",
+      "video": "./videos/scene2.mp4",
+      "duration": 8,
+      "question": "你发现了一把钥匙和一张纸条，上面写着'不要相信任何人'。你会：",
+      "choices": [
+        { "text": "相信纸条，独自探索", "next": "explore_alone", "key": "A" },
+        { "text": "寻找其他人求助", "next": "find_others", "key": "B" }
+      ],
+      "timeout": 10,
+      "timeoutChoice": "explore_alone"
+    },
+    "open_door": {
+      "id": "open_door",
+      "name": "走廊惊魂",
+      "video": "./videos/scene3.mp4",
+      "duration": 8,
+      "question": "走廊尽头有两条路，你听到左边有声音，右边一片寂静。你会：",
+      "choices": [
+        { "text": "走向左边（有声音）", "next": "follow_sound", "key": "A" },
+        { "text": "走向右边（安静）", "next": "quiet_path", "key": "B" }
+      ],
+      "timeout": 10,
+      "timeoutChoice": "quiet_path"
+    },
+    "call_help": {
+      "id": "call_help",
+      "name": "呼救的后果",
+      "video": "./videos/scene4.mp4",
+      "duration": 6,
+      "question": "你的呼救引来了注意，但不知道来的是敌是友。你会：",
+      "choices": [
+        { "text": "躲藏起来", "next": "hide_ending", "key": "A" },
+        { "text": "主动现身", "next": "reveal_ending", "key": "B" }
+      ],
+      "timeout": 8,
+      "timeoutChoice": "hide_ending"
+    },
+    "explore_alone": {
+      "id": "explore_alone",
+      "name": "独自前行",
+      "video": "./videos/scene5.mp4",
+      "duration": 8,
+      "question": "你发现了一个秘密通道，但看起来很危险。你会：",
+      "choices": [
+        { "text": "冒险进入", "next": "secret_ending_good", "key": "A" },
+        { "text": "寻找其他出路", "next": "trapped_ending", "key": "B" }
+      ],
+      "timeout": 10,
+      "timeoutChoice": "trapped_ending"
+    },
+    "find_others": {
+      "id": "find_others",
+      "name": "遇见陌生人",
+      "video": "./videos/scene6.mp4",
+      "duration": 8,
+      "question": "你遇到了一个神秘人，他声称可以帮你逃离。你会：",
+      "choices": [
+        { "text": "相信他", "next": "betrayed_ending", "key": "A" },
+        { "text": "保持警惕", "next": "escape_ending", "key": "B" }
+      ],
+      "timeout": 10,
+      "timeoutChoice": "escape_ending"
+    },
+    "follow_sound": {
+      "id": "follow_sound",
+      "name": "声音的来源",
+      "video": "./videos/scene7.mp4",
+      "duration": 6,
+      "question": "声音来自一个被困的人，但救他可能会暴露自己。你会：",
+      "choices": [
+        { "text": "冒险救人", "next": "hero_ending", "key": "A" },
+        { "text": "继续独自前进", "next": "survivor_ending", "key": "B" }
+      ],
+      "timeout": 8,
+      "timeoutChoice": "survivor_ending"
+    },
+    "quiet_path": {
+      "id": "quiet_path",
+      "name": "寂静之路",
+      "video": "./videos/scene8.mp4",
+      "duration": 8,
+      "question": "你发现了一个出口，但门被锁住了。你会：",
+      "choices": [
+        { "text": "用钥匙尝试开锁", "next": "freedom_ending", "key": "A" },
+        { "text": "寻找其他出口", "next": "lost_ending", "key": "B" }
+      ],
+      "timeout": 10,
+      "timeoutChoice": "lost_ending"
+    },
+    "hide_ending": {
+      "id": "hide_ending",
+      "name": "隐藏结局：谨慎的幸存者",
+      "video": "./videos/ending1.mp4",
+      "isEnding": true,
+      "endingTitle": "隐藏结局：谨慎的幸存者",
+      "endingDesc": "你选择躲藏起来，成功避开了危险。虽然安全了，但你永远不知道外面发生了什么。有时候，不知道真相也是一种幸福。"
+    },
+    "reveal_ending": {
+      "id": "reveal_ending",
+      "name": "悲剧结局：信任的代价",
+      "video": "./videos/ending2.mp4",
+      "isEnding": true,
+      "endingTitle": "悲剧结局：信任的代价",
+      "endingDesc": "你主动现身，却发现来者是敌人。你的善良成为了你的弱点。在这个世界，信任是需要付出代价的。"
+    },
+    "secret_ending_good": {
+      "id": "secret_ending_good",
+      "name": "完美结局：真相大白",
+      "video": "./videos/ending3.mp4",
+      "isEnding": true,
+      "endingTitle": "完美结局：真相大白",
+      "endingDesc": "你发现了这个地方的秘密，成功逃脱并揭露了真相。你的勇气和智慧拯救了所有人。这是最好的结局！"
+    },
+    "trapped_ending": {
+      "id": "trapped_ending",
+      "name": "困境结局：循环往复",
+      "video": "./videos/ending4.mp4",
+      "isEnding": true,
+      "endingTitle": "困境结局：循环往复",
+      "endingDesc": "你一直在寻找其他出路，却发现自己回到了原点。有时候，不做出选择也是一种选择，但代价是永远困在这里。"
+    },
+    "betrayed_ending": {
+      "id": "betrayed_ending",
+      "name": "背叛结局：轻信他人",
+      "video": "./videos/ending5.mp4",
+      "isEnding": true,
+      "endingTitle": "背叛结局：轻信他人",
+      "endingDesc": "你相信了那个神秘人，但他背叛了你。纸条上的警告是对的——不要相信任何人。"
+    },
+    "escape_ending": {
+      "id": "escape_ending",
+      "name": "生存结局：独善其身",
+      "video": "./videos/ending6.mp4",
+      "isEnding": true,
+      "endingTitle": "生存结局：独善其身",
+      "endingDesc": "你保持警惕，成功逃离了这个地方。虽然你没有救其他人，但你活了下来。在这个世界，活着就是胜利。"
+    },
+    "hero_ending": {
+      "id": "hero_ending",
+      "name": "英雄结局：舍己为人",
+      "video": "./videos/ending7.mp4",
+      "isEnding": true,
+      "endingTitle": "英雄结局：舍己为人",
+      "endingDesc": "你冒险救了那个被困的人，虽然暴露了自己，但你们一起找到了出路。善良终将得到回报。"
+    },
+    "survivor_ending": {
+      "id": "survivor_ending",
+      "name": "孤独结局：独自前行",
+      "video": "./videos/ending8.mp4",
+      "isEnding": true,
+      "endingTitle": "孤独结局：独自前行",
+      "endingDesc": "你选择了独自前进，成功逃脱了。但那个被困的人永远留在了那里。生存和道德，你选择了前者。"
+    },
+    "freedom_ending": {
+      "id": "freedom_ending",
+      "name": "自由结局：重获新生",
+      "video": "./videos/ending9.mp4",
+      "isEnding": true,
+      "endingTitle": "自由结局：重获新生",
+      "endingDesc": "钥匙打开了门，你终于重获自由。阳光照在你脸上，你发誓再也不会回到那个可怕的地方。"
+    },
+    "lost_ending": {
+      "id": "lost_ending",
+      "name": "迷失结局：无尽迷宫",
+      "video": "./videos/ending10.mp4",
+      "isEnding": true,
+      "endingTitle": "迷失结局：无尽迷宫",
+      "endingDesc": "你一直在寻找其他出口，却迷失在这个巨大的迷宫中。有时候，最简单的解决方案就是正确的方案。"
+    }
+  },
+  "startNode": "start"
+}
